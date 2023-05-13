@@ -1,4 +1,4 @@
-# Prueba PySwarms
+# Ejemplo PySwarms
 
 Este código es un ejemplo básico de cómo utilizar [PySwarms](https://pyswarms.readthedocs.io/en/latest/api/pyswarms.single.html) para resolver un problema de optimización. El ejemplo utiliza la función esférica (sphere) para demostrar cómo funciona el algoritmo de optimización PSO para encontrar el mínimo global de una función.
 
@@ -22,7 +22,7 @@ optimizer = ps.single.LocalBestPSO(n_particles=10, dimensions=2, options=options
 stats = optimizer.optimize(fx.sphere, iters=100)
 ```
 
-Finalmente, se muestra una gráfica del historial de costos utilizando la librería `matplotlib.pyplot`. La variable `costs` contiene la evolución del costo en cada iteración.
+Luego, se muestra una gráfica del historial de costos utilizando la librería `matplotlib.pyplot`. La variable `costs` contiene la evolución del costo en cada iteración.
 
 ```python
 import matplotlib.pyplot as plt
@@ -34,6 +34,14 @@ plt.title("Cost History")
 plt.xlabel("Iteration")
 plt.ylabel("Cost")
 plt.show()
+```
+
+Finalmente, se muestra un contorno de la función objetivo en el espacio de búsqueda utilizando la función plot_contour de PySwarms. La variable pos_history contiene el historial de posiciones de las partículas.
+
+```python
+from pyswarms.utils.plotters import plot_contour
+pos_history = optimizer.pos_history
+plot_contour(pos_history)
 ```
 
 Es importante mencionar que este ejemplo es muy básico y se puede utilizar PySwarms para resolver problemas de optimización más complejos, utilizando diferentes algoritmos y técnicas de optimización.
