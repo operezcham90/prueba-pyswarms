@@ -2,7 +2,8 @@
 !pip install requests Pillow numpy pyswarm scipy
 ```
 
-```pythonimport requests
+```python
+import requests
 from PIL import Image
 from io import BytesIO
 import numpy as np
