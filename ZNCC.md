@@ -6,30 +6,6 @@
 import requests
 from PIL import Image
 from io import BytesIO
-
-# URLs for the template image and search space image
-template_url = "https://raw.githubusercontent.com/operezcham90/prueba-pyswarms/main/t.jpg"
-search_space_url = "https://raw.githubusercontent.com/operezcham90/prueba-pyswarms/main/f.jpg"
-
-# Fetch the template image
-template_response = requests.get(template_url)
-template_image = Image.open(BytesIO(template_response.content))
-
-# Fetch the search space image
-search_space_response = requests.get(search_space_url)
-search_space_image = Image.open(BytesIO(search_space_response.content))
-
-# Display the template image
-template_image.show()
-
-# Display the search space image
-search_space_image.show()
-```
-
-```python
-import requests
-from PIL import Image
-from io import BytesIO
 import numpy as np
 
 def openCVGrayscaleReal(r, g, b):
